@@ -11,7 +11,7 @@ if __name__ == '__main__':
     query_name = input()
 
 sum = 0
-count = 0.00
+count = 0
 for i in student_marks[query_name]:
     sum += i
     count += 1.00
