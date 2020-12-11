@@ -25,20 +25,43 @@ int main(){
     }
     int lcm_a = lcm(a, n);
     int gcd_b = b[1];
-    // for(int i : b){
-    //     gcd_b = gcd(i, gcd_b);
+    for(int i : b){
+        gcd_b = gcd(i, gcd_b);
+    }
+    // gcd_b = lcm(b, m);
+    // int count = 0;
+    // int i = 1;
+    // int multiple = lcm_a;
+    // while(multiple < (gcd_b/lcm_a)){
+    //     multiple = lcm_a * i;
+    //     if(gcd_b % multiple == 0){
+    //         count++;
+    //     }
+    //     i++;
     // }
-    gcd_b = lcm(b, m);
-    int count = 0;
     int i = 1;
     int multiple = lcm_a;
-    while(multiple < (gcd_b/lcm_a)){
+    // cout << multiple << endl;
+    // cout << gcd_b << endl;
+    int ans = 0;
+    while(gcd_b >= multiple){
+        int count = 0;
         multiple = lcm_a * i;
-        if(gcd_b % multiple == 0){
-            count++;
+        // cout << multiple << endl;
+        for(int j : b){
+            if(j % multiple == 0){
+                count++;
+                // cout << count << endl;
+            }
+            else{
+                break;
+            }
+        }
+        if(count == m){
+            ans += 1;
         }
         i++;
     }
-    cout << count << endl;
+    cout << ans << endl;
 
 }
