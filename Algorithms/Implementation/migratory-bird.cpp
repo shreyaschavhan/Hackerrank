@@ -8,18 +8,14 @@ vector<string> split(const string &);
 
 // Complete the migratoryBirds function below.
 int migratoryBirds(vector<int> arr) {
-    sort(arr.begin(), arr.end());
-    vector <int> count(arr[arr.size()-1]);
+    vector <int> count(5, 0);
     for(int i : arr){
-        if(i >= 1 && i < arr[arr.size()-1]){
             count[i - 1]++;
-        }
     }
-    int maxCount = count[0];
+
     int index = 0;
     for(unsigned int j = 0; j < count.size(); j++){
-        if(count[j] > maxCount){
-            maxCount = count[j];
+        if(count[j] > count[index]){
             index = j;
         }
     }
