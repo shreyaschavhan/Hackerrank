@@ -1,3 +1,5 @@
+// there is also a direct formula for this approach - i.e (sqrt(a) - sqrt(b) + 1)     
+
 #include <bits/stdc++.h>
 using namespace std;
 
