@@ -15,5 +15,6 @@ count = 0
 for i in student_marks[query_name]:
     sum += i
     count += 1.00
+    count += 1.00
 
 print("{0:.2f}".format(sum/count))
