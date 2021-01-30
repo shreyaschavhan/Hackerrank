@@ -12,15 +12,17 @@ int main(){
     cin >> T;
     while(T--){
         int n, c, m;
-        cin >> n >> c >> m;
-        int chocolate_bought = n/c;
-        int total = chocolate_bought;
-        while(chocolate_bought > 0){
-            cout << "IR: " << total << " " << chocolate_bought << '\n';
-            chocolate_bought /= m;
-            total += chocolate_bought;
+        cin >>n >> c>> m;
+        int chocolate = n/c;
+        int eaten = 0;
+        int wrap = 0;
+        while(chocolate != 0){
+            eaten += chocolate;
+            wrap += chocolate;
+            chocolate = wrap / m;
+            wrap = wrap % m;
         }
-        cout << total << '\n';
+        cout << eaten << '\n';
     }
     return 0;
 }
